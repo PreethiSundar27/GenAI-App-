@@ -1,0 +1,47 @@
+
+
+from openai import OpenAI
+import streamlit as st
+
+#set the key
+f=open(api_path.txt)
+key=f.read()
+client=OpenAI(api_key=key)
+
+#title
+
+st.title(":rainbow[An AI Code Reviewer]")
+
+
+#user input
+
+prompt=st.text_input("Enter the python code......")
+if st.button("Review")==True:
+     #generate response if click the button
+
+
+
+    
+
+     response=client.chat.completions.create(
+          model="gpt-3.5-turbo-16k-0613",
+
+
+          messages=[
+            
+            {'role':'system','content':""" You are a helpful AI Assistant. 
+                                       Given python code you always review the code and 
+                                       find out the bugs and explain the bugs reviewed with the subheader Bugs found, 
+                                       then gives the corrected code or the fixed code with the subheader as Corrected code.""" },
+            
+
+            {'role':'user','content':prompt}
+
+
+          ]
+)
+
+#print the response on the web app
+     st.snow()
+     
+     st.write(response.choices[0].message.content) 
