@@ -1,1 +1,1 @@
-# GenAI-App-
+# GenAI-App
