@@ -2,7 +2,7 @@ from openai import OpenAI
 import streamlit as st
 
 #set the key
-f=open("C:/OpenAI/Gen_AI_app1/keys/openai_api_key.txt")
+f=open(file_path.txt)
 key=f.read()
 client=OpenAI(api_key=key)
 
